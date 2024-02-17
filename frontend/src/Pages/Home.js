@@ -54,7 +54,6 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center">
-      <button className="border-2 bg-green-600 font-semibold rounded-xl p-2" onClick={handleUpload}>Upload Image</button>
       </div>
       </div>
       
