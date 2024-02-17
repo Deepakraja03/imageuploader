@@ -28,3 +28,6 @@ mongoose
 
   const userRoutes = require("./routes/userroutes");
   app.use('/user', userRoutes);
+  
+  const authRoutes = require("./routes/authroutes");
+  app.use('/auth', authRoutes);

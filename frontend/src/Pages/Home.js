@@ -1,34 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import app from '../firebase';
 
 const Home = () => {
   const [image, setImage] = useState(null);
-  const [images, setImages] = useState([]);
+
 
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
   };
-
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/user/image');
-        if (response.ok) {
-          const data = await response.json();
-          setImages(data);
-        } else {
-          console.error('Failed to fetch images');
-        }
-      } catch (error) {
-        console.error('Error fetching images:', error);
-      }
-    };
-
-    fetchImages();
-  }, []);
-
 
   const handleUpload = async () => {
     if (image) {
@@ -62,14 +42,7 @@ const Home = () => {
     <div>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload Image</button>
-      <h1>Images</h1>
-      <div>
-        {images.map((image) => (
-          <div key={image._id}>
-            <img src={image.profilePicture} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '300px' }} />
-          </div>
-        ))}
-      </div>
+      
     </div>
   );
 };
