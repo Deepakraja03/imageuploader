@@ -4,7 +4,16 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors('https://imageviewer-flame.vercel.app'));
+
+const corsOptions = {
+  origin: ['https://imageviewer-flame.vercel.app'],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // enable set cookie
+  optionsSuccessStatus: 204,
+};
+
+// Allow requests from the specified frontend origin
+app.use(cors(corsOptions));
 dbURI = process.env.MONGOURI;
 
 //Connect mongodb

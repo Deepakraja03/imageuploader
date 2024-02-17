@@ -17,7 +17,7 @@ const Home = () => {
       await uploadBytesResumable(storageRef, image);
       const downloadURL = await getDownloadURL(storageRef);
       try {
-        const response = await fetch('https://imageuploader-ten.vercel.app/user/upload', {
+        const response = await fetch('https://imageuploader-backend.vercel.app/user/upload', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
