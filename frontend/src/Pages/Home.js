@@ -25,7 +25,9 @@ const Home = () => {
           body: JSON.stringify({ imageURL: downloadURL }),
         });
         if (response.ok) {
+          alert("Image Successfully Uploaded")
           console.log('Image URL stored successfully');
+          setImage(null);
         } else {
           console.error('Error storing image URL:', response.statusText);
         }
