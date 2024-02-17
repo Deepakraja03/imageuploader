@@ -41,9 +41,22 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload Image</button>
+    <div className='bg-blue-300 h-screen'>
+      <h1 className="font-bold text-center text-5xl py-3">Image Uploder</h1>
+      <div className="flex-col justify-center object-center items-center">
+
+      <div className="text-center my-10">
+        <div>
+          <p className="font-semibold text-lg">Upload your screenshot here :</p>
+        </div>
+        <div className="flex justify-center ml-20 my-5">
+          <input className="flex justify-center"  type="file" onChange={handleFileChange} />
+        </div>
+      </div>
+      <div className="flex justify-center">
+      <button className="border-2 bg-green-600 font-semibold rounded-xl p-2" onClick={handleUpload}>Upload Image</button>
+      </div>
+      </div>
       
     </div>
   );

@@ -26,7 +26,7 @@ const Image = () => {
         <h1>
         Image
         </h1>
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {images.map((image) => (
           <div key={image._id}>
             <img src={image.profilePicture} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '300px' }} />
