@@ -6,7 +6,7 @@ const Image = () => {
     useEffect(() => {
         const fetchImages = async () => {
           try {
-            const response = await fetch('http://localhost:3000/user/image');
+            const response = await fetch('https://imageuploader-ten.vercel.app/user/image');
             if (response.ok) {
               const data = await response.json();
               setImages(data);
